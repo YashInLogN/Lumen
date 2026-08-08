@@ -8,13 +8,13 @@ import pandas as pd
 # print("\nSummary Statistics:")
 # print(df.describe())   Display summary statistics of the DataFrame
 
-arr = np.array([1, 2, 3, 4, 5])
+arr = np.array([1, 2, 3, 4, 5])     
 
 print("Slicing: ", arr[1: 4])  # Calculate and print the mean of the array
 
 print("Filtering: ", arr[arr>1])  # Filter and print elements greater than 1
 
-print("Original Array: ", arr)
+print("Original Array: ", arr)  
 print("Shape of Array: ", arr.shape)  # Print the shape of the array
 
 arr = arr.reshape(5, 1)  # Reshape the array to a 5x1 matrix

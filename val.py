@@ -28,4 +28,4 @@ print("Original Array: ", data)  # Print the original array with infinite values
 # mean_value = np.mean(data[data != np.inf])   Calculate the mean of the array, ignoring infinite values
 # data = np.where(data == np.inf, mean_value, data).astype(int)   Replace infinite values with the mean
 data = np.nan_to_num(data, neginf=0, posinf=0).astype(int)  # Replace infinite values with NaN
-print("Array after replacing inf with mean: ", data)
+print("Array after replacing inf with mean: ", data) # Print the array after replacing infinite values with the mean

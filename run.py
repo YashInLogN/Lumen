@@ -76,3 +76,7 @@ a = 5
 b = 10
 
 print('A bigger') if a > b else print('B bigger')  # Use a conditional expression to print which variable is bigger
+
+
+num = np.linspace(0, 10, 5)  # Generate an array of 5 evenly spaced numbers between 0 and 10
+print("Linearly Spaced Array: ", num)

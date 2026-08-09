@@ -49,3 +49,13 @@ data_clean = np.where((data_clean < 0) | np.isnan(data_clean), mean_value, data_
 _, idx = np.unique(data_clean, return_index=True)  # Get the unique values and their indices
 data_clean = data_clean[np.sort(idx)]  # Keep only the unique values in the array
 print("Array after handling inf, nan, and duplicates: ", data_clean)  # Print the cleaned array after handling infinite, NaN, and duplicate values
+
+# dealing with combined infinite, NaN, duplicate, and negative values in 2D array
+data_2d = np.array([[1, 2, np.nan], [-4, 5, np.inf], [7, 8, 9], [2, -4, 10]])  # Create a 2D array with NaN, infinite, negative, and duplicate values
+print("Original 2D Array: ", data_2d)  # Print the original 2D array with NaN, infinite, negative, and duplicate values
+print("Shape of the original 2D array: ", data_2d.shape)  # Print the shape of the original 2D array
+cleaned_2d = np.where((np.isinf(data_2d)) | (data_2d < 0), np.nan, data_2d)  # Replace infinite and negative values with NaN
+cleaned_2d = np.nan_to_num(cleaned_2d, nan=np.nanmean(cleaned_2d)).astype(int)  # Replace NaN values with the mean of the array
+_, idx = np.unique(cleaned_2d, axis=0, return_index=True)  # Get the unique rows and their indices
+cleaned_2d = cleaned_2d[np.sort(idx)]  # Keep only the unique rows in the 2D array
+print("Cleaned 2D Array after handling inf, nan, and duplicates: ", cleaned_2d)  # Print the cleaned 2D array after handling infinite, NaN, and duplicate values
